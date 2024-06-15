@@ -1,0 +1,19 @@
+name: dbmigrate
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+  workflow_dispatch:
+jobs:
+  db-migrate:
+    runs-on: ubuntu:latest
+    name: db migrate
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: "Migrating db"
+        run: npx sequelize-cli db:migrate
