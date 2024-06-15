@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 jobs:
   db-migrate:
-    runs-on: ubuntu:latest
+    runs-on: ubuntu-latest
     name: db migrate
     steps:
       - name: Checkout
