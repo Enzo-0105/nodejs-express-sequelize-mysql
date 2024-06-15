@@ -15,5 +15,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        
+      - name: Installing dependencies
+        run: npm install
+        
+      - name: installing sequelize cli
+        run: npm install --save sequelize-cli 
+        
       - name: "Migrating db"
         run: npx sequelize-cli db:migrate
